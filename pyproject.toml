@@ -1,0 +1,34 @@
+[project]
+name = "wamover"
+version = "0.1.0"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+description = "Android to iOS WhatsApp migrator (macOS)"
+readme = "README.md"
+authors = [
+    { name = "Akmal Haziq", email = "akmal@kuisytihar.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pycryptodome>=4.4.0",
+    "wa-crypt-tools>=0.1.0",
+    "wabridge",
+]
+
+[project.scripts]
+wamover = "wamover.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.uv.sources]
+wabridge = { git = "https://github.com/Parv3sh/wabridge", rev = "f7e15763f736791f27c8e6424890373899d0068f" }
+
+[build-system]
+requires = ["uv_build>=0.12.0,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]

@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+dist/
+# Private data: never commit backups, keys, or decrypted chats
+work/
+archive/
+*.crypt12
+*.crypt14
+*.crypt15
+*.key
+msgstore.db*
+.tools/
+work-*/
+archive-*/
+.DS_Store
